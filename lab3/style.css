@@ -1,0 +1,30 @@
+
+p{
+    text-align: right; margin-right: 45px;
+   }
+    h1{
+        text-align: right; color: red; font-family: 'Roboto', sans-serif; margin-right: 15px;
+    }
+    h2{
+        text-align: right; color: red; font-family: 'Roboto', sans-serif; margin-right: 25px;
+    }
+    em{
+        color: green; border-bottom: 3px double; 
+    }
+    div{
+        background-color: white; color: black; max-width: 960px; margin-left: auto; margin-right: auto; padding-left: 10px; padding-right: 10px;
+    }
+    strong{
+        font-family: 'Caveat', cursive;
+    }
+    body{
+        background-image: url(pattern.svg);
+        background-repeat: repeat;
+    }
+
+
+
+
+
+
+
