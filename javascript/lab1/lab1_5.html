@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Отрисовка таблицы в консоли браузера</title>
+</head>
+<body>
+  <script>
+function drawTable(rows) {
+  
+    var animals = ['dog', 'dog', 'dog', 'cat', 'cat', 'dog'];
+  
+    for (var i = 0; i < rows; i++) {
+      var row = '';
+      
+      for (var j = 0; j < 6; j++) {
+        var index = (j + i) % animals.length;
+        row += animals[index] + '\t';
+      }
+      
+      console.log(row);
+    }
+  }
+  var num = parseInt(prompt("Введите целочисленное значение num:"));
+  drawTable(num);
+  </script>
+</body>
+</html>
