@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .placeholder {
+        color: blue;
+      }
+      
+      .placeholder-label {
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: -25px;
+        color: blue;
+        transition: all 0.2s;
+      }
+      
+      .input-wrapper {
+        position: relative;
+      }
+    </style>  
+</head>
+<body>
+    <input type="text" id="myInput" data-placeholder="Введите текст..." />
+
+    <script>
+        const input = document.getElementById('myInput');
+const placeholderText = input.dataset.placeholder;
+
+// Добавляем плейсхолдер синим цветом
+input.classList.add('placeholder');
+input.value = placeholderText;
+
+// Создаем подсказку
+const placeholderLabel = document.createElement('label');
+placeholderLabel.classList.add('placeholder-label');
+placeholderLabel.innerText = placeholderText;
+input.parentElement.insertBefore(placeholderLabel, input);
+
+// Обработчик фокусировки
+input.addEventListener('focus', function() {
+  input.classList.remove('placeholder');
+  placeholderLabel.classList.add('active');
+});
+
+// Обработчик снятия фокуса
+input.addEventListener('blur', function() {
+  if (input.value === '') {
+    input.classList.add('placeholder');
+    placeholderLabel.classList.remove('active');
+  }
+});
+    </script>
+</body>
+</html>
