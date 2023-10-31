@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv">Нажмите Ctrl+E</div>
+    <script>
+  document.addEventListener('keydown', function(event) {
+  // Проверяем сочетание клавиш Ctrl+E
+  if (event.ctrlKey && event.key === 'e') {
+    event.preventDefault();
+    createTextArea();
+  }
+
+  // Проверяем сочетание клавиш Ctrl+S
+  if (event.ctrlKey && event.key === 's') {
+    event.preventDefault();
+    saveChanges();
+  }
+
+  // Проверяем клавишу Esc
+  if (event.key === 'Escape') {
+    event.preventDefault();
+    cancelChanges();
+  }
+});
+
+function createTextArea() {
+  const div = document.getElementById('myDiv');
+  const html = div.innerHTML;
+  const textarea = document.createElement('textarea');
+  textarea.value = html;
+  div.replaceWith(textarea);
+  textarea.focus();
+}
+
+function saveChanges() {
+  const textarea = document.querySelector('textarea');
+  const html = textarea.value;
+  const div = document.createElement('div');
+  div.id = 'myDiv';
+  div.innerHTML = html;
+  textarea.replaceWith(div);
+}
+
+function cancelChanges() {
+  const textarea = document.querySelector('textarea');
+  const div = document.createElement('div');
+  div.id = 'myDiv';
+  div.innerHTML = textarea.value;
+  textarea.replaceWith(div);
+}
+    </script>
+</body>
+</html>
