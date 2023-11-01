@@ -1,24 +1,35 @@
-
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+<meta charset="utf-8">
+<title>Использование float при построении горизонтального меню</title>
+<style type="text/css">
+.menu{
+	list-style:none;
+	margin:0;
+	padding:10px;
+   
+    
+}
+.menu li{
+	content: "";
+}
+.menu li a{
+	display:block;
+	padding:10px;
+	background:#ccf;
+    float: left;
+    margin: 5px;
+}
+</style>
 </head>
 <body>
-	<div>Пользователи:</div>
-	<ul>
-		<li>Маша</li>
-		<li>Вовочка</li>
-	</ul>
-	
-	<script>
-		const headElement = document.head;
-		const ulElement = document.querySelector('ul');
-		const liElements = ulElement.querySelectorAll('li');
-		console.log(headElement); 
-		console.log(ulElement); 
-		console.log(liElements); 
-	</script>
+<ul class="menu">
+	<li><a href="#">Пункт 1</a></li>
+	<li><a href="#">Пункт 2</a></li>
+	<li><a href="#">Пункт 3</a></li>
+	<li><a href="#">Пункт 4</a></li>
+	<li><a href="#">Пункт 5</a></li>
+<ul>
 </body>
 </html>
