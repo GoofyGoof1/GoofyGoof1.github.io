@@ -3,30 +3,58 @@
 <head>
 		<meta charset="UTF-8">
 		<title>Оформление вертикального меню</title>
-		<style>
-		ul{
-            width: 200px; list-style-type: none;
-        }
-        li ul{
-            display: none; position: relative; top: 0; width: 150px; list-style-type: none;
-        }
-        li:hover ul{
-            list-style-type: none;
-            display: block;
-            content: "\f062"; font-family: FontAwesome; color: #aaaaaa;  margin-right: 10px; 
-        }
-        li li::before{
-                list-style-type: none;
-                content: "\f061"; /* добавляем иконку корзина */
-                font-family: FontAwesome;
-                color: #aaaaaa;
-                margin-right: 10px;            
-                    }
-        li::before{
-            list-style-type: none; content: "\f063"; font-family: FontAwesome; color: #aaaaaa;  margin-right: 10px; 
-        }    
+        <style>
+			html {
+					background: #f0f0f0;
+			}
+			
+			.menu { 
+                    padding: 1px 3px 6px 7px;
+					width: 200px;
+					background: #fff;
+			}
+			
+			.menu ul {
+                    position:relative;
+                    list-style: none;
+				
+			}
+			.menu li {
+                    list-style:none;
+			}
+			
+			.menu li:before {
+                    left: 22px;
+                    width: 4px;
+                    background: url(pic/sprite.png)        no-repeat left top;
+                    content: '';
+                    height: 14px;
+                    width: 15px;
+                    position: absolute;
+			}
+			
+			.menu li a {
+                    color:#5276a1;
+					
+			}
+			
+			
+			.menu li ul {
+                    margin-bottom: 12px;
+					
+			}
+			
+			.menu li li:before {
+                    background-position: 0px -16px;
+                    left: 20px;
+                    margin-left: -20px;
+					
+			}
+			.menu li li { 
+                    margin-left: -20px;
+					
+			}
 	</style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<nav class="menu">
